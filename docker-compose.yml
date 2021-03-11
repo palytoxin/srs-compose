@@ -1,0 +1,13 @@
+version: '3'
+services:
+  ossrs:
+    container_name: ossrs
+    image: ossrs/srs:3
+    #network_mode: "host"
+    restart: always
+    ports:
+      - 1935:1935
+      - 1985:1985
+      - 8080:8080
+    volumes:
+      - ./srs.conf:/usr/local/srs/conf/srs.conf
